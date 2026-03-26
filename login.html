@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/admin.css" />
+    <title>Login - Admin</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header__logo"><a href="./index.html">CURSOS</a></figure>
+      <nav class="header__navigation">
+        <ul class="header__navigation__items">
+          <li class="header__navigation__item">
+            <a href="./index.html" class="header__item__link">HOME</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="auth">
+        <h2 style="margin-bottom: 14px">Login Admin</h2>
+        <div id="error" class="error" style="display: none"></div>
+
+        <div class="notice">
+          Credenciales demo: <strong>admin</strong> / <strong>admin123</strong>
+        </div>
+
+        <form id="loginForm">
+          <div class="field">
+            <label for="username"><strong>Usuario</strong></label>
+            <input id="username" type="text" autocomplete="username" required />
+          </div>
+
+          <div class="field">
+            <label for="password"><strong>Password</strong></label>
+            <input id="password" type="password" autocomplete="current-password" required />
+          </div>
+
+          <div class="row">
+            <button class="btn" type="submit">Ingresar</button>
+            <a class="btn btn--ghost" href="./index.html">Cancelar</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p id="date" class="footer__paragraph"></p>
+    </footer>
+
+    <script type="module">
+      import { initLogin } from './scripts/admin.js';
+      initLogin();
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/admin.css" />
+    <title>Admin - Cursos</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header__logo"><a href="./index.html">CURSOS</a></figure>
+      <nav class="header__navigation">
+        <ul class="header__navigation__items">
+          <li class="header__navigation__item">
+            <a href="./index.html" class="header__item__link">HOME</a>
+          </li>
+          <li class="header__navigation__item">
+            <button id="logoutBtn" class="btn btn--ghost" type="button">Salir</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="auth" style="max-width: 900px">
+        <h2 style="margin-bottom: 14px">Administrador de Cursos</h2>
+        <div id="error" class="error" style="display: none"></div>
+
+        <form id="courseForm">
+          <input id="courseId" type="hidden" />
+
+          <div class="row">
+            <div class="field" style="flex: 1 1 260px">
+              <label for="title"><strong>Título</strong></label>
+              <input id="title" type="text" required />
+            </div>
+            <div class="field" style="flex: 1 1 260px">
+              <label for="tag"><strong>Tag</strong></label>
+              <input id="tag" type="text" placeholder="Frontend/Backend/BDatos..." required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="subtitle"><strong>Subtítulo</strong></label>
+            <input id="subtitle" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="description"><strong>Descripción</strong></label>
+            <textarea id="description" rows="3" required></textarea>
+          </div>
+
+          <div class="row">
+            <div class="field" style="flex: 1 1 260px">
+              <label for="img"><strong>Imagen (URL)</strong></label>
+              <input id="img" type="url" placeholder="https://..." required />
+            </div>
+            <div class="field" style="flex: 0 1 160px">
+              <label for="price"><strong>Precio</strong></label>
+              <input id="price" type="number" min="0" step="0.01" required />
+            </div>
+            <div class="field" style="flex: 0 1 160px">
+              <label><strong>Activo</strong></label>
+              <div style="display: flex; gap: 10px; align-items: center">
+                <input id="active" type="checkbox" checked />
+                <span class="muted">Visible en Home</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field" style="flex: 1 1 260px">
+              <label for="duration"><strong>Duración</strong></label>
+              <input id="duration" type="text" placeholder="Ej: 24 horas" />
+            </div>
+            <div class="field" style="flex: 1 1 260px">
+              <label for="instructor"><strong>Instructor</strong></label>
+              <input id="instructor" type="text" placeholder="Ej: Fernando" />
+            </div>
+            <div class="field" style="flex: 1 1 260px">
+              <label for="schedule"><strong>Horario</strong></label>
+              <input id="schedule" type="text" placeholder="Ej: Mar/Jue 7:00pm - 9:30pm" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 10px">
+            <button class="btn" type="submit">Guardar</button>
+            <button id="newBtn" class="btn btn--ghost" type="button">Nuevo</button>
+            <a class="btn btn--ghost" href="./index.html">Ver público</a>
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <h3 style="margin: 22px 0 10px 0; color: #2f2f9b">Cursos</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Curso</th>
+              <th>Tag</th>
+              <th>Precio</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="coursesBody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p id="date" class="footer__paragraph"></p>
+    </footer>
+
+    <script type="module">
+      import { initAdminCourses } from './scripts/admin.js';
+      initAdminCourses();
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,91 @@
+.main__courses {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 60px;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  width: min(340px, 100%);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  overflow: hidden;
+}
+
+.card__content {
+  padding: 0 16px;
+}
+
+.card__img {
+  height: 200px;
+  width: 100%;
+  display: block;
+}
+
+.card__title {
+  height: 50px;
+
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 8px 12px 0 12px;
+}
+
+.card__paragraph {
+  padding: 0;
+}
+
+.card__paragraph--subtitle {
+  font-size: 0.9em;
+  color: #666;
+  height: 30px;
+}
+
+.card__data {
+  margin-top: auto;
+  margin-bottom: 16px;
+  width: 100%;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.card__price {
+  font-weight: bolder;
+  font-size: 0.9em;
+  color: #2f2f9b;
+}
+
+.tag {
+  font-size: 0.85em;
+  background: #eef;
+  color: #2f2f9b;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.card__actions {
+  padding: 0 12px 16px 12px;
+  width: 100%;
+}
+
+.card__actions a {
+  width: 100%;
+  justify-content: center;
+}
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/course.css" />
+    <title>Detalle - Cursos Online</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header__logo"><a href="./index.html">CURSOS</a></figure>
+      <nav class="header__navigation">
+        <ul class="header__navigation__items">
+          <li class="header__navigation__item">
+            <a href="./index.html" class="header__item__link">HOME</a>
+          </li>
+          <li class="header__navigation__item">
+            <a href="./login.html" class="header__item__link">ADMIN</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div id="message" class="notice" style="display: none"></div>
+      <div id="course"></div>
+    </main>
+
+    <footer class="footer">
+      <p id="date" class="footer__paragraph"></p>
+    </footer>
+
+    <script type="module" src="./scripts/course-detail.js"></script>
+    <script>
+      (function () {
+        const el = document.getElementById('message');
+        if (!el) return;
+        const obs = new MutationObserver(() => {
+          el.style.display = el.textContent ? 'block' : 'none';
+        });
+        obs.observe(el, { childList: true, subtree: true });
+      })();
+    </script>
+  </body>
+</html>
+
