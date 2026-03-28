@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "slug": "curso-1",
+    "img": "https://placehold.co/960x540/png?text=Angular+Avanzado",
+    "title": "Angular Avanzado",
+    "subtitle": "Crea aplicaciones modernas en Angular 21",
+    "description": "Arquitectura, formularios, rutas, rendimiento y buenas prácticas aplicadas a un proyecto real.",
+    "price": 249.0,
+    "tag": "Frontend",
+    "duration": "24 horas",
+    "instructor": "Fernando",
+    "schedule": "Lun/Mié/Vie 7:00pm - 9:00pm",
+    "active": true
+  },
+  {
+    "id": 2,
+    "slug": "curso-2",
+    "img": "https://placehold.co/960x540/png?text=React+Native",
+    "title": "React Native",
+    "subtitle": "Crea aplicaciones híbridas con el framework más popular",
+    "description": "Componentes, navegación, consumo de APIs, almacenamiento local y publicación de builds.",
+    "price": 229.0,
+    "tag": "Frontend",
+    "duration": "20 horas",
+    "instructor": "Fernando",
+    "schedule": "Mar/Jue 7:00pm - 9:30pm",
+    "active": true
+  },
+  {
+    "id": 3,
+    "slug": "curso-3",
+    "img": "https://placehold.co/960x540/png?text=Vue.js",
+    "title": "Vue.js",
+    "subtitle": "Desarrollo de Aplicaciones Web Modernas",
+    "description": "Reactividad, componentes, routing, estado y patrones típicos para apps modernas.",
+    "price": 189.0,
+    "tag": "Frontend",
+    "duration": "18 horas",
+    "instructor": "Fernando",
+    "schedule": "Sáb 9:00am - 1:00pm",
+    "active": true
+  }
+]
