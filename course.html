@@ -32,16 +32,6 @@
     </footer>
 
     <script type="module" src="./scripts/course-detail.js"></script>
-    <script>
-      (function () {
-        const el = document.getElementById('message');
-        if (!el) return;
-        const obs = new MutationObserver(() => {
-          el.style.display = el.textContent ? 'block' : 'none';
-        });
-        obs.observe(el, { childList: true, subtree: true });
-      })();
-    </script>
   </body>
 </html>
 

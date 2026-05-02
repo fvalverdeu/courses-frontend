@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <title>Cursos Online</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header__logo"><a href="./index.html">CURSOS</a></figure>
+      <nav class="header__navigation">
+        <ul class="header__navigation__items">
+          <li class="header__navigation__item">
+            <a href="./index.html" class="header__item__link">HOME</a>
+          </li>
+          <li class="header__navigation__item">
+            <a href="../login.html" class="header__item__link">ADMIN</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="main__courses">
+        <article class="card">
+          <img src="https://placehold.co/960x540/png?text=Angular+Avanzado" alt="Angular Avanzado" class="card__img" />
+          <div class="card__content">
+            <div class="card__body">
+              <h3 class="card__title">Angular Avanzado</h3>
+              <p class="card__paragraph card__paragraph--subtitle"><strong>Crea aplicaciones modernas en Angular 21</strong></p>
+              <p class="card__paragraph">Arquitectura, formularios, rutas, rendimiento y buenas prácticas aplicadas a un proyecto real.</p>
+            </div>
+            <div class="card__data">
+              <span class="card__price">S/ 249.00</span>
+              <span class="tag">Frontend</span>
+            </div>
+            <div class="card__actions">
+              <a class="btn" href="./course-1.html">Ver detalle</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://placehold.co/960x540/png?text=React+Native" alt="React Native" class="card__img" />
+          <div class="card__content">
+            <div class="card__body">
+              <h3 class="card__title">React Native</h3>
+              <p class="card__paragraph card__paragraph--subtitle"><strong>Crea aplicaciones híbridas con el framework más popular</strong></p>
+              <p class="card__paragraph">Componentes, navegación, consumo de APIs, almacenamiento local y publicación de builds.</p>
+            </div>
+            <div class="card__data">
+              <span class="card__price">S/ 229.00</span>
+              <span class="tag">Frontend</span>
+            </div>
+            <div class="card__actions">
+              <a class="btn" href="./course-2.html">Ver detalle</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://placehold.co/960x540/png?text=Vue.js" alt="Vue.js" class="card__img" />
+          <div class="card__content">
+            <div class="card__body">
+              <h3 class="card__title">Vue.js</h3>
+              <p class="card__paragraph card__paragraph--subtitle"><strong>Desarrollo de Aplicaciones Web Modernas</strong></p>
+              <p class="card__paragraph">Reactividad, componentes, routing, estado y patrones típicos para apps modernas.</p>
+            </div>
+            <div class="card__data">
+              <span class="card__price">S/ 189.00</span>
+              <span class="tag">Frontend</span>
+            </div>
+            <div class="card__actions">
+              <a class="btn" href="./course-3.html">Ver detalle</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p id="date" class="footer__paragraph"></p>
+    </footer>
+
+    <script>
+      document.getElementById('date').textContent = `© ${new Date().getFullYear()} Cursos Online`;
+    </script>
+  </body>
+</html>

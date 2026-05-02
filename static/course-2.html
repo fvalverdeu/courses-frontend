@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/course.css" />
+    <title>React Native - Cursos Online</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header__logo"><a href="./index.html">CURSOS</a></figure>
+      <nav class="header__navigation">
+        <ul class="header__navigation__items">
+          <li class="header__navigation__item">
+            <a href="./index.html" class="header__item__link">HOME</a>
+          </li>
+          <li class="header__navigation__item">
+            <a href="../login.html" class="header__item__link">ADMIN</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="course">
+        <div>
+          <img
+            class="course__img"
+            src="https://placehold.co/960x540/png?text=React+Native"
+            alt="React Native"
+          />
+        </div>
+        <div class="course__meta">
+          <div class="tag" style="width: fit-content">Frontend</div>
+          <h1 class="course__title">React Native</h1>
+          <div class="course__subtitle">Crea aplicaciones híbridas con el framework más popular</div>
+          <p class="muted">Componentes, navegación, consumo de APIs, almacenamiento local y publicación de builds.</p>
+
+          <div class="course__kv">
+            <div><strong>Precio</strong></div>
+            <div>S/ 229.00</div>
+            <div><strong>Duracion</strong></div>
+            <div>20 horas</div>
+            <div><strong>Instructor</strong></div>
+            <div>Fernando</div>
+            <div><strong>Horario</strong></div>
+            <div>Mar/Jue 7:00pm - 9:30pm</div>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a class="btn" href="./index.html">Volver</a>
+            <a class="btn btn--ghost" href="../login.html">Admin</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p id="date" class="footer__paragraph"></p>
+    </footer>
+
+    <script>
+      document.getElementById('date').textContent = `© ${new Date().getFullYear()} Cursos Online`;
+    </script>
+  </body>
+</html>

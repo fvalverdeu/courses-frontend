@@ -6,19 +6,8 @@ function $(id) {
   return document.getElementById(id);
 }
 
-function escapeHtml(s) {
-  return String(s)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
-}
-
 function setYear() {
-  const el = $('date');
-  if (!el) return;
-  el.textContent = `© ${new Date().getFullYear()} Cursos Online`;
+  $('date').textContent = `© ${new Date().getFullYear()} Cursos Online`;
 }
 
 export function getToken() {
@@ -48,7 +37,7 @@ async function api(path, { method = 'GET', body = undefined, auth = false } = {}
 
   const contentType = res.headers.get('content-type') || '';
   const isJson = contentType.includes('application/json');
-  const data = isJson ? await res.json().catch(() => null) : null;
+  const data = isJson ? await res.json() : null;
 
   if (!res.ok) {
     const msg = data?.message || `HTTP ${res.status}`;
@@ -60,14 +49,12 @@ async function api(path, { method = 'GET', body = undefined, auth = false } = {}
 
 function showError(message) {
   const el = $('error');
-  if (!el) return;
   el.style.display = 'block';
   el.textContent = message;
 }
 
 function clearError() {
   const el = $('error');
-  if (!el) return;
   el.style.display = 'none';
   el.textContent = '';
 }
@@ -109,7 +96,6 @@ function resetForm() {
 
 function renderCoursesTable(courses) {
   const tbody = $('coursesBody');
-  if (!tbody) return;
 
   tbody.innerHTML = courses
     .map((c) => {
@@ -117,17 +103,17 @@ function renderCoursesTable(courses) {
       const pillText = c.active ? 'Activo' : 'Inactivo';
       return `
         <tr>
-          <td>${escapeHtml(c.id)}</td>
+          <td>${c.id}</td>
           <td>
-            <div><strong>${escapeHtml(c.title)}</strong></div>
-            <div class="muted">${escapeHtml(c.subtitle)}</div>
+            <div><strong>${c.title}</strong></div>
+            <div class="muted">${c.subtitle}</div>
           </td>
-          <td><span class="tag">${escapeHtml(c.tag)}</span></td>
-          <td>S/ ${escapeHtml(c.price)}</td>
+          <td><span class="tag">${c.tag}</span></td>
+          <td>S/ ${c.price}</td>
           <td><span class="${pillClass}">${pillText}</span></td>
           <td class="actions">
-            <button class="btn" data-action="edit" data-id="${escapeHtml(c.id)}">Editar</button>
-            <button class="btn btn--ghost" data-action="toggle" data-id="${escapeHtml(c.id)}">${c.active ? 'Desactivar' : 'Activar'}</button>
+            <button class="btn" data-action="edit" data-id="${c.id}">Editar</button>
+            <button class="btn btn--ghost" data-action="toggle" data-id="${c.id}">${c.active ? 'Desactivar' : 'Activar'}</button>
           </td>
         </tr>
       `;
@@ -146,7 +132,6 @@ async function onTableClick(e) {
 
   const action = btn.dataset.action;
   const id = Number(btn.dataset.id);
-  if (!Number.isFinite(id)) return;
 
   clearError();
 
@@ -233,10 +218,10 @@ export async function initAdminCourses() {
   const logoutBtn = $('logoutBtn');
   const tbody = $('coursesBody');
 
-  if (form) form.addEventListener('submit', onSave);
-  if (newBtn) newBtn.addEventListener('click', onNew);
-  if (logoutBtn) logoutBtn.addEventListener('click', onLogout);
-  if (tbody) tbody.addEventListener('click', onTableClick);
+  form.addEventListener('submit', onSave);
+  newBtn.addEventListener('click', onNew);
+  logoutBtn.addEventListener('click', onLogout);
+  tbody.addEventListener('click', onTableClick);
 
   try {
     await refreshCourses();
